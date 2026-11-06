@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Pop-Up Fact Check</title>
+<style>body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:44rem;margin:2rem auto;padding:0 1rem;line-height:1.55;color:#111}h1{font-size:1.6rem}h2{font-size:1.15rem;margin-top:1.6rem}ul,ol{padding-left:1.25rem}code{font-size:0.92em;background:#f4f4f4;padding:0.1em 0.3em;border-radius:3px}</style>
+</head>
+<body>
+<h1>Privacy Policy — Pop-Up Fact Check</h1>
+<p>Effective date: November 5, 2026<br>
+Product: Pop-Up Fact Check browser extension (Chrome / Firefox)<br>
+Developer: Matthew Ackerman<br>
+Contact: mattackerman80@gmail.com</p>
+<h2>Summary</h2>
+<p>Pop-Up Fact Check does not operate a backend server and does not create an account with us. The extension runs in your browser, stores settings locally, reads YouTube captions for videos you open, and sends transcript excerpts and claims only to the AI provider(s) you configure with your own API key.</p>
+<h2>Data the extension handles</h2>
+<ol>
+<li><strong>Settings you enter</strong> — enabled/mode toggles, provider and model ids, optional second-opinion settings, web-search toggle, and API keys for OpenRouter, xAI, Anthropic, OpenAI, and/or Google Gemini. Stored in <code>chrome.storage.local</code> / <code>browser.storage.local</code> on your device.</li>
+<li><strong>YouTube caption / timed-text content</strong> for the active <code>youtube.com</code> video, plus video id and publish date when available — used to spot and check claims (or produce fun-fact cards).</li>
+<li><strong>Cached fact-check cards</strong> — stored locally so the same caption chunk is not re-queried every time. You can clear this cache from Options.</li>
+</ol>
+<h2>What is sent where</h2>
+<ul>
+<li><strong>To YouTube:</strong> content scripts run only on <code>https://www.youtube.com/*</code>. The extension may refetch an allowed <code>https://www.youtube.com/api/timedtext</code> URL with your normal YouTube cookies (<code>credentials: &quot;include&quot;</code>) solely to obtain captions. Those cookies are not sent to AI providers.</li>
+<li><strong>To your chosen AI provider(s):</strong> HTTPS requests with your API key (<code>credentials: &quot;omit&quot;</code>) containing system/user prompts, caption chunk text, and extracted claims. If you enable web search and the provider supports it, the provider may perform web search (and for xAI, X search) using claim-related queries. Source links shown on cards are URLs returned by that provider.</li>
+<li><strong>To the developer / Pop-Up Fact Check:</strong> nothing. There is no Pop-Up Fact Check analytics, crash reporter, or account server in this extension.</li>
+</ul>
+<h2>Sharing / selling</h2>
+<p>We do not sell your data. We do not share extension data with third parties except the providers you explicitly configure, under those providers’ own terms and privacy policies.</p>
+<h2>Retention</h2>
+<p>Local settings and cache remain until you clear them, clear site/extension data, or uninstall. Provider retention is governed by the provider you use.</p>
+<h2>Children’s privacy</h2>
+<p>The extension is not directed at children under 13.</p>
+<h2>Your choices</h2>
+<ul>
+<li>Do not enter an API key → the extension cannot check claims.</li>
+<li>Turn off “Run on YouTube” in Options.</li>
+<li>Disable web search in Options.</li>
+<li>Use “Clear cached verdicts”.</li>
+<li>Remove the extension to delete its local storage.</li>
+</ul>
+<h2>Changes</h2>
+<p>If this policy changes, the effective date above will be updated on the hosted page.</p>
+<h2>Contact</h2>
+<p>For support or privacy questions about Pop-Up Fact Check, email: mattackerman80@gmail.com</p>
+</body>
+</html>
